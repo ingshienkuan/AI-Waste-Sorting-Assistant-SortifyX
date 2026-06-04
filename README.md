@@ -68,37 +68,6 @@ There's a `SortifyX_YOLOv8_Training.ipynb` notebook for Colab. Upload it, switch
 
 If you don't have a trained model, the backend falls back to simulation mode (random classifications) so you can still demo the rest of the app.
 
-## Things I'd change with more time
-
-- The organic class accuracy. Needs a bigger, more consistent dataset.
-- Move the model to TFLite and run on-device. No network required.
-- SQLite → Postgres if this ever went into production.
-- iOS build. Currently Android-only because I don't own a Mac.
-- Real OAuth instead of email/password.
-- A way for users to flag misclassifications. Free training data and the model gets better over time.
-
-## Known issues
-
-- First request after the backend starts is slow (~5s) because the model loads lazily.
-- The camera preview can look stretched on tall phones running older versions of the `camera` plugin. Updating to 0.11+ fixed it for me.
-- If you change WiFi networks the LAN IP changes and you need to rebuild with a new `API_BASE_URL`. Annoying.
-
-## Project structure
-sortifyx_backend/
-├── app.py                  # Flask entry point
-├── routes/                 # API routes (auth, scan, admin, rewards, etc.)
-├── ml_model/               # YOLOv8 wrapper + simulation fallback
-├── database.py             # SQLAlchemy models
-├── dataset/                # Training data (after merge_datasets.py)
-├── models/                 # Trained .pt files go here
-└── scripts/merge_datasets.py  # Combines TrashNet + organic sources
-sortifyx_app/lib/
-├── main.dart               # Routes, theme
-├── config/app_config.dart  # API URL config (no hardcoded values)
-├── services/api_service.dart  # HTTP wrapper
-├── screens/                # All the UI screens
-├── widgets/                # Shared widgets (bottom nav, etc.)
-└── utils/helpers.dart      # Date/number/icon helpers
 
 ## Credits
 
