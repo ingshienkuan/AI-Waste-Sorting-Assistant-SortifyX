@@ -1,0 +1,48 @@
+name: sortifyx_app
+description: AI Waste Sorting Assistant - SortifyX
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.19.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # UI Components
+  cupertino_icons: ^1.0.8
+  
+  # HTTP & API
+  http: ^1.2.0
+  
+  # State Management & Storage
+  shared_preferences: ^2.2.2
+  
+  # Image Handling
+  image_picker: ^1.0.7
+  
+  # Camera
+  camera: ^0.10.5+9
+  
+  # Permissions
+  permission_handler: ^11.3.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^3.0.0
+  flutter_launcher_icons: ^0.14.4
+
+flutter:
+  uses-material-design: true
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/icon/app_icon.png"
+  adaptive_icon_background: "#5CB85C"
+  adaptive_icon_foreground: "assets/icon/app_icon.png"

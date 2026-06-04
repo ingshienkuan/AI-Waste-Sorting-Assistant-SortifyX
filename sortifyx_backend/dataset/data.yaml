@@ -1,0 +1,14 @@
+# SortifyX merged dataset (TrashNet + Organic)
+train: train/images
+val: valid/images
+test: test/images
+
+nc: 7
+names:
+  0: plastic
+  1: metal
+  2: glass
+  3: paper
+  4: cardboard
+  5: organic
+  6: non_recyclable
